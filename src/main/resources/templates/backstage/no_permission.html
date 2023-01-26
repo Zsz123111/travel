@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>权限不足</title>
+    <th:block th:replace="/backstage/common_resources::common_css"></th:block>
+    <th:block th:replace="/backstage/common_resources::common_js"></th:block>
+</head>
+
+<body class="hold-transition skin-purple sidebar-mini">
+<header th:replace="/backstage/common_header::header"></header>
+<aside th:replace="/backstage/common_aside::aside"></aside>
+<div class="wrapper">
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                403 错误页面
+            </h1>
+
+            <ol class="breadcrumb">
+                <li><a href="all-admin-index.html"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li class="active">403 错误</li>
+            </ol>
+
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="error-page">
+                <h2 class="headline text-yellow"> 403</h2>
+
+                <div class="error-content">
+                    <h3><i class="fa fa-warning text-yellow"></i> 权限不足</h3>
+
+                    <p>
+                        您的权限不足，请联系管理员添加权限
+                    </p>
+
+                </div>
+                <!-- /.error-content -->
+            </div>
+            <!-- /.error-page -->
+        </section>
+    </div>
+</div>
+<footer th:replace="/backstage/common_footer::footer"></footer>
+</body>
+
+</html>

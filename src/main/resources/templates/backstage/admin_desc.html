@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>用户详情</title>
+    <th:block th:replace="/backstage/common_resources::common_css"></th:block>
+    <th:block th:replace="/backstage/common_resources::common_js"></th:block>
+</head>
+
+<body class="hold-transition skin-purple sidebar-mini">
+<header th:replace="/backstage/common_header::header"></header>
+<aside th:replace="/backstage/common_aside::aside"></aside>
+<div class="wrapper">
+    <div class="content-wrapper">
+
+        <!-- 内容头部 -->
+        <section class="content-header">
+            <h1>
+                用户管理
+                <small>用户详情</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/backstage/index"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="/backstage/admin_all">用户管理</a></li>
+                <li class="active">用户详情</li>
+            </ol>
+        </section>
+        <!-- 内容头部 /-->
+
+        <!-- 正文区域 -->
+        <section class="content">
+            <table id="collapse-table" class="table table-bordered table-hover dataTable">
+                <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>详情</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td th:text="${admin.username}"></td>
+                </tr>
+                <tbody th:each="role,status:${admin.roles}">
+                <tr th:attr="data-tt-id=${status.index}">
+                    <td th:text="${role.roleName}"></td>
+                    <td th:text="${role.roleDesc}"></td>
+                </tr>
+                <tr th:each="permission:${role.permissions}" th:attr="data-tt-parent-id=${status.index}" data-tt-id="1-1">
+                    <td th:text="${permission.permissionName}"></td>
+                    <td th:text="${permission.permissionDesc}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- 正文区域 /-->
+
+    </div>
+</div>
+<footer th:replace="/backstage/common_footer::footer"></footer>
+<script>
+    $(document).ready(function() {
+
+        /*table tree*/
+        $("#collapse-table").treetable({
+            expandable: true
+        });
+
+    });
+</script>
+</body>
+
+</html>

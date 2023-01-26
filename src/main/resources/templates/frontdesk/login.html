@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="/frontdesk/css/common.css">
+	<link rel="stylesheet" type="text/css" href="/frontdesk/css/login.css">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<!--导入angularJS文件-->
+	<script src="/frontdesk/js/angular.min.js"></script>
+	<!--导入jquery-->
+	<script src="/frontdesk/js/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+	<!-- 头部 end -->
+	<section id="login_wrap">
+		<div class="simple_header">
+			<div class="logo">
+				<img src="/frontdesk/images/logo.png" alt="">
+			</div>
+			<a class="link" href="index.html"><span class="glyphicon glyphicon-home"></span>首页</a>
+		</div>
+		<div class="fullscreen-bg" style="background: url(/frontdesk/images/login_bg2.jpeg);height: 641px;">
+
+		</div>
+		<div class="login-box">
+			<div class="title">
+				<span>账户登录</span>
+			</div>
+			<div class="login_inner">
+				<!--登录错误提示消息-->
+				<span th:text="${message}" style="color: red"></span>
+				<form id="loginForm" action="/frontdesk/member/login" method="post" accept-charset="utf-8">
+					<div class="input-group">
+						<div class="input-group-addon">
+							<span class="glyphicon glyphicon-user"></span>
+						</div>
+						<input class="form-control" name="name" type="text" placeholder="请输入账号/手机/邮箱" autocomplete="off">
+					</div>
+					<div class="input-group">
+						<div class="input-group-addon">
+							<span class="glyphicon glyphicon-lock"></span>
+						</div>
+						<input class="form-control" name="password" type="text" placeholder="请输入密码" autocomplete="off">
+					</div>
+					<div class="option">
+						<div class="register">
+							<a href="/frontdesk/register" >立马注册</a>
+						</div>
+					</div>
+					<button type="submit" class="btn">登录</button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!--引入尾部-->
+	<footer th:replace="~{/frontdesk/footer}"></footer>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="/frontdesk/js/jquery-1.11.0.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="/frontdesk/js/bootstrap.min.js"></script>
+	<!--导入布局js，共享footer-->
+	<script type="text/javascript" src="/frontdesk/js/include.js"></script>
+</body>
+
+</html>

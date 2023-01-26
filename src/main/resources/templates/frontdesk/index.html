@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>百战旅游网</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!--引入头部-->
+    <header th:replace="~{/frontdesk/header::header}"></header>
+    <!-- banner start-->
+    <section id="banner">
+        <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel"
+            data-interval="4000">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="images/1.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/2.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/3.jpg" alt="">
+                </div>
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    <!-- banner end-->
+    <section id="content">
+
+
+        <div class="tops">
+            <div class="tops_title">
+                <h3>热推</h3>
+            </div>
+            <div class="tops_container">
+                <ul class="tops_list">
+                    <li class="header">国内跟团游</li>
+                    <li class="item">
+                        <span class="badge">1</span>
+                        <img src="./images/top1.jpg" width="100px" height="100px" />
+                        <p class="content">
+                            <span>喀纳斯8日游</span><br />
+                            <span>5.0分</span>
+                            |
+                            <span>100人出游</span>
+
+                        </p>
+                        <p class="price">￥6980</p>
+                    </li>
+                    <li class="item">
+                        <span class="badge" style="background:#FF8B26">2</span>
+                        <img src="./images/top2.jpg" width="100px" height="100px" />
+                        <p class="content">
+                            <span>黄果树梵净山11日游</span><br />
+                            <span>5.0分</span>
+                            |
+                            <span>70人出游</span>
+
+                        </p>
+                        <p class="price">￥3280</p>
+                    </li>
+                    <li class="item">
+                        <span class="badge" style="background:#FFB63E">3</span>
+                        <img src="./images/top3.jpeg" width="100px" height="100px" />
+                        <p class="content">
+                            <span>庐山3日游</span><br />
+                            <span>5.0分</span>
+                            |
+                            <span>60人出游</span>
+
+                        </p>
+                        <p class="price">￥1817</p>
+                    </li>
+                    <li class="item">
+                        <span class="badge" style="background:#99AECA ;">4</span>
+                        <img src="./images/top4.jpg" width="100px" height="100px" />
+                        <p class="content">
+                            <span>张家界+黄龙洞+天门山+凤凰4日游</span><br />
+                            <span>5.0分</span>
+                            |
+                            <span>50人出游</span>
+
+                        </p>
+                        <p class="price">￥2780</p>
+                    </li>
+                    <li class="item">
+                        <span class="badge" style="background:#99AECA ;">5</span>
+                        <img src="./images/top5.jpg" width="100px" height="100px" />
+                        <p class="content">
+                            <span>拉萨布宫-巴松错-羊湖卧飞9日游</span><br />
+                            <span>5.0分</span>
+                            |
+                            <span>40人出游</span>
+
+                        </p>
+                        <p class="price">￥7780</p>
+                    </li>
+
+                </ul>
+                <ul class="tops_list">
+                    <li class="header">国外跟团游</li>
+                    <li class="item">
+                        <span class="badge">1</span>
+                        <img src="./images/top1.jpg" width="100px" height="100px" />
+                        <p class="content">
+                            <span>喀纳斯8日游</span><br />
+                            <span>5.0分</span>
+                            |
+                            <span>100人出游</span>
+
+                        </p>
+                        <p class="price">￥6980</p>
+                    </li>
+                    <li class="item">
+                        <span class="badge" style="background:#FF8B26">2</span>
+                        <img src="./images/top2.jpg" width="100px" height="100px" />
+                        <p class="content">
+                            <span>黄果树梵净山11日游</span><br />
+                            <span>5.0分</span>
+                            |
+                            <span>70人出游</span>
+
+                        </p>
+                        <p class="price">￥3280</p>
+                    </li>
+                    <li class="item">
+                        <span class="badge" style="background:#FFB63E">3</span>
+                        <img src="./images/top3.jpeg" width="100px" height="100px" />
+                        <p class="content">
+                            <span>庐山3日游</span><br />
+                            <span>5.0分</span>
+                            |
+                            <span>60人出游</span>
+
+                        </p>
+                        <p class="price">￥1817</p>
+                    </li>
+                    <li class="item">
+                        <span class="badge" style="background:#99AECA ;">4</span>
+                        <img src="./images/top4.jpg" width="100px" height="100px" />
+                        <p class="content">
+                            <span>张家界+黄龙洞+天门山+凤凰4日游</span><br />
+                            <span>5.0分</span>
+                            |
+                            <span>50人出游</span>
+
+                        </p>
+                        <p class="price">￥2780</p>
+                    </li>
+                    <li class="item">
+                        <span class="badge" style="background:#99AECA ;">5</span>
+                        <img src="./images/top5.jpg" width="100px" height="100px" />
+                        <p class="content">
+                            <span>拉萨布宫-巴松错-羊湖卧飞9日游</span><br />
+                            <span>5.0分</span>
+                            |
+                            <span>40人出游</span>
+
+                        </p>
+                        <p class="price">￥7780</p>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="domestic">
+                <div>
+                    <h3>境内旅游</h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4>热门景点</h4>
+                            <ul>
+                                <li>蜈支洲岛</li>
+                                <li>西双版纳</li>
+                                <li>鼓浪屿</li>
+                                <li>雪乡</li>
+                                <li>北海</li>
+                                <li>故宫</li>
+                                <li>雪乡</li>
+                                <li>兵马俑</li>
+                                <li>张家界</li>
+                                <li>黄山</li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/dom1.jpeg" >
+                                        <span class="title">三亚+蜈支洲+天堂+南山+天涯双飞5日游</span>
+                                        <span class="price">￥3000</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/dom2.jpg" alt="">
+                                        <span class="title">海南三亚一地+亚特兰蒂斯双飞5日自由行</span>
+                                        <span class="price">￥6000</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/dom3.jpg" alt="">
+                                        <span class="title">云南+丽江+大理双飞5日游</span>
+                                        <span class="price">￥4000</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/dom4.jpg" alt="">
+                                        <span class="title">昆明+红土地+弥勒+普者黑+元阳梯田+抚仙湖双飞7日游</span>
+                                        <span class="price">￥5500</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/dom5.jpg" alt="">
+                                        <span class="title">成都+九寨沟黄龙+都江堰+熊猫6日游</span>
+                                        <span class="price">￥2800</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/dom6.jpg" alt="">
+                                        <span class="title">贵州黄果树+荔波+西江苗寨双飞5日游</span>
+                                        <span class="price">￥5500</span>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>周边旅游</h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4>热门目的地</h4>
+                            <ul>
+                                <li>上海迪士尼</li>
+                                <li>普陀山</li>
+                                <li>宁波</li>
+                                <li>千岛湖</li>
+                                <li>黄山</li>
+                                <li>大明山</li>
+                               
+
+                            </ul>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/zhou1.jpg" >
+                                        <span class="title">古北水镇2日游</span>
+                                        <span class="price">￥698</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/zhou2.jpg" alt="">
+                                        <span class="title">北京八达岭长城1日游</span>
+                                        <span class="price">￥120</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/zhou3.jpg" alt="">
+                                        <span class="title">密云古北水镇1日游</span>
+                                        <span class="price">￥278</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/zhou4.jpeg" alt="">
+                                        <span class="title">秦皇岛-北戴河-山海关-黄金海岸3日游</span>
+                                        <span class="price">￥3300</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/zhou5.jpg" alt="">
+                                        <span class="title">秦皇岛-南北戴河-山海关3日游</span>
+                                        <span class="price">￥1280</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/zhou6.jpeg" alt="">
+                                        <span class="title">北京黄花城水长城一日游</span>
+                                        <span class="price">￥100</span>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>主题旅游</h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4>热门主题</h4>
+                            <ul>
+                                <li>蜜月</li>
+                                <li>度假</li>
+                                <li>游乐园</li>
+                                <li>婚纱</li>
+                                <li>摄影</li>
+                                <li>名山胜水</li>
+                                <li>儿童</li>
+                                <li>老年</li>
+                               
+
+                            </ul>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/theme1.jpg" >
+                                        <span class="title">广州长隆野生动物园-珠海长隆海洋王国双飞半自助4日游</span>
+                                        <span class="price">￥7000</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/theme2.jpg" alt="">
+                                        <span class="title">三亚亚龙湾瑞吉度假酒店2-5日酒景套餐</span>
+                                        <span class="price">￥1580</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/theme3.jpg" alt="">
+                                        <span class="title">海南三亚+西岛+千古情+南山双飞5日游</span>
+                                        <span class="price">￥3650</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/theme4.jpeg" alt="">
+                                        <span class="title">三亚婚纱旅拍4晚5日游</span>
+                                        <span class="price">￥4800</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/theme5.jpg" alt="">
+                                        <span class="title">马尔代夫阿雅达白色礼堂婚礼</span>
+                                        <span class="price">￥1280</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="./images/theme6.jpg" alt="">
+                                        <span class="title">海南三亚双飞5日游</span>
+                                        <span class="price">￥3600</span>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="praise">
+            
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="4000">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="images/pa1.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/pa2.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="images/pa3.jpg" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 旅游 end-->
+    <!--导入底部-->
+    <footer th:replace="~{/frontdesk/footer::footer}"></footer>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>新增用户</title>
+    <th:block th:replace="/backstage/common_resources::common_css"></th:block>
+    <th:block th:replace="/backstage/common_resources::common_js"></th:block>
+</head>
+
+<body class="hold-transition skin-purple sidebar-mini">
+<header th:replace="/backstage/common_header::header"></header>
+<aside th:replace="/backstage/common_aside::aside"></aside>
+<div class="wrapper">
+    <div class="content-wrapper">
+
+        <!-- 内容头部 -->
+        <section class="content-header">
+            <h1>
+                用户管理
+                <small>新增用户</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/backstage/index"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="/backstage/admin_all">用户管理</a></li>
+                <li class="active">新增用户</li>
+            </ol>
+        </section>
+        <!-- 内容头部 /-->
+
+        <!-- 正文区域 -->
+        <section class="content">
+            <form th:action="@{/backstage/admin/add}" method="post">
+                <div class="row data-type">
+
+                    <div class="col-md-2 title">用户名</div>
+                    <div class="col-md-4 data">
+                        <input type="text" class="form-control" placeholder="用户名" name="username">
+                    </div>
+
+                    <div class="col-md-2 title">密码</div>
+                    <div class="col-md-4 data">
+                        <input type="password" class="form-control" placeholder="密码" name="password">
+                    </div>
+                    <div class="col-md-2 title">邮箱</div>
+                    <div class="col-md-4 data">
+                        <input type="text" class="form-control" placeholder="邮箱" name="email">
+                    </div>
+
+                    <div class="col-md-2 title">联系电话</div>
+                    <div class="col-md-4 data">
+                        <input type="text" class="form-control" placeholder="联系电话" name="phoneNum">
+                    </div>
+                    <div class="col-md-2 title">用户状态</div>
+                    <div class="col-md-4 data">
+                        <select class="form-control" name="status">
+                            <option value="true">开启</option>
+                            <option value="false">关闭</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2 title"></div>
+                    <div class="col-md-10 data text-center">
+                        <button type="submit" class="btn bg-maroon">保存</button>
+                        <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+        <!-- 正文区域 /-->
+
+    </div>
+</div>
+<footer th:replace="/backstage/common_footer::footer"></footer>
+</body>
+
+</html>

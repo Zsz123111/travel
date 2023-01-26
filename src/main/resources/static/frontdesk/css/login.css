@@ -1,0 +1,129 @@
+
+#login_wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.login-box {
+    width: 360px;
+    position: absolute;
+    top: 180px;
+    right: 170px;
+    background: #fff;
+}
+
+.title {
+    height: 80px;
+    line-height: 80px;
+    background: var(--primary-color);
+    font-size: 22px;
+    padding: 0 30px;
+    text-align: center;
+    color: #fff
+}
+
+.title img {
+    float: left;
+    margin-top: 12px;
+    margin-right: 15px;
+}
+
+.login_inner {
+    overflow: hidden;
+    padding: 10px 30px;
+}
+
+#loginForm .input-group {
+    margin-bottom: 15px;
+}
+
+#loginForm .input-group .input-group-addon {
+    background-color: #fff;
+    color: var(--primary-color)
+}
+
+#loginForm .input-group input {
+    border-left: 0px;
+
+}
+
+.alert {
+    display: none;
+    margin: 0 auto;
+    padding: 6px 10px;
+    border: 1px solid transparent;
+    text-align: left;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    margin-bottom: 17px;
+    font-size: 12px;
+}
+
+.login_inner form {
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.login_inner input {
+    border: 1px solid #d8d8d8;
+    font-size: 14px;
+    color: #666;
+    box-shadow: 0 0 5px #fff;
+    outline: none;
+    transition: box-shadow 0.25s linear 0s;
+    -webkit-transition: box-shadow 0.25s linear 0s;
+}
+
+.verify input {
+    width: 110px;
+    margin-right: 20px;
+    float: left;
+    margin-bottom: 0;
+}
+
+#loginForm button {
+    width: 100%;
+    background-color: var(--primary-color);
+    margin-top: 15px;
+    color: #fff
+}
+#loginForm .option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+}
+#loginForm .option .register a{
+    color:var(--primary-color)
+}
+
+.auto_login {
+    display: flex;
+}
+.auto_login .checkbox{
+    margin-right:6px;
+}
+
+
+
+
+
+.reg {
+    border-top: 1px solid #eeeeee;
+    margin-top: 15px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #f1f1f1;
+    text-align: center;
+    font-size: 16px;
+}
+
+.reg a {
+    color: #fc7f7f;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itbaizhan.travel.mapper.RoleMapper">
+    <select id="findRoleIdByAdmin" parameterType="int" resultType="int">
+        select rid from admin_role where aid = #{aid};
+    </select>
+
+    <delete id="deleteRoleAllPermission" parameterType="int">
+        delete from role_permission where rid = #{rid};
+    </delete>
+
+    <insert id="addRolePermission" >
+        Insert into role_permission values(#{rid},#{pid})
+    </insert>
+</mapper>

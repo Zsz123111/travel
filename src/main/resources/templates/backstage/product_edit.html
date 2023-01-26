@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>修改旅游产品</title>
+    <th:block th:replace="/backstage/common_resources::common_css"></th:block>
+    <th:block th:replace="/backstage/common_resources::common_js"></th:block>
+</head>
+<body class="hold-transition skin-purple sidebar-mini">
+<header th:replace="~{/backstage/common_header::header}"></header>
+<aside th:replace="~{/backstage/common_aside::aside}"></aside>
+<div class="wrapper">
+    <div class="content-wrapper">
+        <!-- 内容头部 -->
+        <section class="content-header">
+            <h1>
+                旅游产品管理
+                <small>修改旅游产品</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="@{/backstage/index}"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="@{/backstage/product/all}">旅游产品管理</a></li>
+                <li class="active">修改旅游产品</li>
+            </ol>
+        </section>
+        <!-- 内容头部 /-->
+
+        <!-- 正文区域 -->
+        <section class="content">
+            <div class="row data-type">
+                <div class="col-md-2 title" style="height: 110px">产品图片</div>
+                <div class="col-md-8 data" style="height: 110px">
+                    <form id="uploadPImage" enctype="multipart/form-data">
+                        <input type="file" name="file" id="pImageFile">
+                    </form>
+                </div>
+                <script>
+                    $(function (){
+                        $("#pImageFile").change(function (){
+                            // 异步提交表单
+                            $("#uploadPImage").ajaxSubmit({
+                                url:"/backstage/product/upload",
+                                type: "post",
+                                success:function (result){
+                                    // 上传成功后，图片回显到pImage上
+                                    $("#pImage").attr("src",result.data[0]);
+                                    // 上传成功后，图片地址放入产品表单的隐藏域中
+                                    $("#hiddenPImage").val(result.data[0]);
+                                }
+                            })
+                        })
+                    })
+                </script>
+                <div class="col-md-2 data" style="height: 110px">
+                    <img height="100" th:src="${product.pImage}" id="pImage">
+                </div>
+                <form th:action="@{/backstage/product/update}" method="post">
+                    <input type="hidden" name="pImage" id="hiddenPImage">
+                    <input type="hidden" name="pid" th:value="${product.pid}">
+                    <div class="col-md-2 title">产品名称</div>
+                    <div class="col-md-4 data">
+                        <input type="text" class="form-control" th:value="${product.productName}" name="productName">
+                    </div>
+                    <div class="col-md-2 title">产品类型</div>
+                    <div class="col-md-4 data">
+                        <select class="form-control" name="cid">
+                            <option th:each="category:${categoryList}"
+                                    th:value="${category.cid}"
+                                    th:text="${category.cname}"
+                                    th:selected="${category.cid eq product.cid}"></option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 title">价格</div>
+                    <div class="col-md-4 data">
+                        <input type="number" class="form-control" th:value="${product.price}" name="price">
+                    </div>
+                    <div class="col-md-2 title">热线电话</div>
+                    <div class="col-md-4 data">
+                        <input type="text" class="form-control" th:value="${product.hotline}" name="hotline" value="">
+                    </div>
+                    <div class="col-md-2 title">状态</div>
+                    <div class="col-md-4 data">
+                        <select class="form-control" name="status">
+                            <option value="true">开启</option>
+                            <option value="false">关闭</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 data"></div>
+                    <div class="col-md-2 title" style="height: 350px">产品详情</div>
+                    <div class="col-md-10 data" style="height: 350px">
+                        <div id="div1" th:utext="${product.productDesc}"></div>
+                        <textarea id="text1" name="productDesc" style="width:100%; height:200px;" hidden></textarea>
+                        <script>
+                            var E = window.wangEditor
+                            var editor = new E('#div1')
+                            var $text1 = $('#text1')
+                            editor.customConfig.onchange = function (html) {
+                                // 监控变化，同步更新到 textarea
+                                $text1.val(html)
+                            }
+                            // 自定义菜单配置
+                            editor.customConfig.menus = [
+                                'head',  // 标题
+                                'bold',  // 粗体
+                                'fontSize',  // 字号
+                                'fontName',  // 字体
+                                'italic',  // 斜体
+                                'underline',  // 下划线
+                                'foreColor',  // 文字颜色
+                                'backColor',  // 背景颜色
+                                'justify',  // 对齐方式
+                                'image',  // 插入图片
+                                'undo',  // 撤销
+                            ]
+                            // 配置上传图片服务器端地址
+                            editor.customConfig.uploadImgServer = '/backstage/product/upload';
+                            // 配置上传图片的参数名
+                            editor.customConfig.uploadFileName = 'file';
+                            editor.create()
+                            // 初始化 textarea 的值
+                            $text1.val(editor.txt.html())
+                        </script>
+                    </div>
+                    <div class="col-md-2 title"></div>
+                    <div class="col-md-10 data text-center">
+                        <button type="submit" class="btn bg-maroon">保存</button>
+                        <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- 正文区域 /-->
+    </div>
+</div>
+<footer th:replace="~{/backstage/common_footer::footer}"></footer>
+</body>
+</html>

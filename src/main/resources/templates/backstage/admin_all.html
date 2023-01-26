@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>用户管理</title>
+    <th:block th:replace="/backstage/common_resources::common_css"></th:block>
+    <th:block th:replace="/backstage/common_resources::common_js"></th:block>
+</head>
+
+<body class="hold-transition skin-purple sidebar-mini">
+<header th:replace="/backstage/common_header::header"></header>
+<aside th:replace="/backstage/common_aside::aside"></aside>
+<div class="wrapper">
+    <div class="content-wrapper">
+
+        <!-- 内容头部 -->
+        <section class="content-header">
+            <h1>
+                用户管理
+                <small>用户列表</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/backstage/index"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="/backstage/admin_all">用户管理</a></li>
+                <li class="active">数据列表</li>
+            </ol>
+        </section>
+        <!-- 内容头部 /-->
+
+        <!-- 正文区域 -->
+        <section class="content">
+
+            <!-- .box-body -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">列表</h3>
+                </div>
+
+                <div class="box-body">
+
+                    <!-- 数据表格 -->
+                    <div class="table-box">
+
+                        <!--工具栏-->
+                        <div class="pull-left">
+                            <div class="form-group form-inline">
+                                <div class="btn-group">
+                                    <a th:href="@{/backstage/admin_add}">
+                                        <button type="button" class="btn btn-default" title="新建"><i class="fa fa-file-o"></i>新建</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--工具栏/-->
+
+                        <!--数据列表-->
+                        <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
+                            <thead>
+                            <tr>
+                                <th class="" style="padding-right:0px;">
+                                    <input id="selall" type="checkbox" class="icheckbox_square-blue">
+                                </th>
+                                <th>用户名</th>
+                                <th>邮箱</th>
+                                <th>联系电话</th>
+                                <th>状态</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="admin:${adminPage.records}">
+                                <td><input name="ids" type="checkbox"></td>
+                                <td th:text="${admin.username}"></td>
+                                <td th:text="${admin.email}"></td>
+                                <td th:text="${admin.phoneNum}"></td>
+                                <td th:text="${admin.status}"></td>
+                                <td class="text-center">
+                                    <a th:href="@{/backstage/admin/desc(aid=${admin.aid})}" class="btn bg-green btn-xs">详情</a>
+                                    <a th:href="@{/backstage/admin/edit(aid=${admin.aid})}" class="btn bg-red btn-xs">修改</a>
+                                    <a th:href="@{/backstage/admin/findRole(aid=${admin.aid})}" class="btn bg-blue btn-xs">分配角色</a>
+                                    <a th:href="@{/backstage/admin/updateStatus(aid=${admin.aid})}" class="btn bg-gray btn-xs">启用/禁用</a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <!--数据列表/-->
+                    </div>
+                    <!-- 数据表格 /-->
+                </div>
+                <!-- /.box-body -->
+
+                <!-- .box-footer-->
+                <div class="box-footer">
+                    <div class="pull-left">
+                        <div class="form-group form-inline">
+                            总共<span th:text="${adminPage.pages}"></span>页，共<span th:text="${adminPage.total}"></span>条数据。
+                        </div>
+                    </div>
+
+                    <div class="box-tools pull-right">
+                        <ul class="pagination"></ul>
+                    </div>
+                </div>
+                <!-- /.box-footer-->
+            </div>
+
+        </section>
+        <!-- 正文区域 /-->
+
+    </div>
+</div>
+<footer th:replace="/backstage/common_footer::footer"></footer>
+<script th:inline="javascript">
+    var currentPage = [[${adminPage.current}]];
+    var pages = [[${adminPage.pages}]];
+    var context = [[${#servletContext.contextPath}]];
+    $(".pagination").bootstrapPaginator({
+        bootstrapMajorVersion: 3, //bootstrap版本
+        currentPage: currentPage, //当前页
+        totalPages: pages, // 总页数
+        numberOfPages: 5, // 最多显示多少页
+        itemTexts: function (type, page, current) {
+            switch (type) {
+                case "first":
+                    return "首页";
+                case "prev":
+                    return "上一页";
+                case "next":
+                    return "下一页";
+                case "last":
+                    return "末页";
+                case "page":
+                    return page;
+            }
+        },
+        onPageClicked: function (event, originalEvent, type, page) { //点击页码执行的方法
+            location.href =context+ "/backstage/admin/all?page=" + page;
+        }
+    });
+</script>
+</body>
+
+</html>

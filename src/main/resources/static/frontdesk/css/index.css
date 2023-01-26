@@ -1,0 +1,224 @@
+
+
+#content {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+	margin-bottom: 20px;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item {
+    height: 450px;
+    overflow: hidden;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+    width: 100%;
+}
+
+.carousel-fade .carousel-inner .item {
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .item,
+
+.carousel-fade .carousel-inner .active.left,
+
+.carousel-fade .carousel-inner .active.right {
+    opacity: 0;
+}
+
+.carousel-fade .carousel-inner .active,
+
+.carousel-fade .carousel-inner .next.left,
+
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .next,
+
+.carousel-fade .carousel-inner .prev,
+
+.carousel-fade .carousel-inner .active.left,
+
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    transform: translate3d(0, 0, 0);
+}
+
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+
+.hot {
+    display: flex;
+}
+
+
+
+.tops {
+    margin-right: 30px;
+    flex:1
+}
+
+ .tops_title {
+    font-size: 15px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+
+.tops_title h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+.tops_container{
+    display: flex;
+}
+.tops_container .tops_list:nth-child(1) {
+    border: 1px solid #e2f2fb;
+    border-radius: 10px;
+    background: linear-gradient(-153.43deg, #def1df08 0%, #2ea27b 100%);
+    box-shadow: 3px 4px 6px #d8efea;
+    margin-right: 20px;
+}
+.tops_container .tops_list:nth-child(2){
+    border: 1px solid #f4f6fd;
+    background:linear-gradient(26.57deg, #e6ecfc 0%, #f4f6fd 100%);
+    box-shadow: 3px 4px 6px #f4f6fd;
+}
+
+.tops .tops_list .header {
+    height: 56px;
+    background: url(../images/group.png) no-repeat;
+    background-size: auto 159%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 56px;
+    font-weight: bold;
+    padding-right: 10px;
+    color: inherit;
+}
+
+.tops .tops_list .item {
+    display: flex;
+    padding: 15px;
+    background-color: #fff;
+    padding-bottom: 0px;
+}
+
+.tops .tops_list .item img {
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.tops .tops_list .item .content {
+   flex:1;
+   padding-top: 5px;
+}
+.tops .tops_list .item .content span:nth-child(1){
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.tops .tops_list .item .content span:nth-child(3){
+    color:var(--primary-color)
+}
+
+.tops .tops_list .item .price {
+    font-size: 16px;
+    color: #e20f0f;
+}
+.tops .tops_list .item .badge {
+    height: 20px;
+    position: absolute;
+    background:#ff0000ba
+}
+.praise{
+    width:430px;
+    height: 750px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+    overflow: hidden;
+    margin-top: 56px;
+}
+.praise .carousel{
+    border-radius: 10px;
+    height: 750px;
+    overflow: hidden;
+
+}
+.praise .carousel-inner>.item>a>img,.praise .carousel-inner>.item {
+    height: 100%;
+    overflow: hidden;
+}
+.domestic {
+    padding:15px 0
+}
+.domestic h3{
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--primary-color);
+    margin:10px 0;
+    padding-bottom: 5px;
+}
+.domestic h4{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.domestic .row{
+    padding:10px
+}
+
+.domestic ul li{
+    width: 80px;
+    display: inline-block;
+    margin:5px 0
+}
+.domestic ul li::before{
+    content:'';
+    display: inline-block;
+    width:5px;
+    height:5px;
+    background:var(--primary-color);
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.domestic .box{
+    position: relative;
+    height: 150px;
+}
+.domestic .col-md-4,.domestic .col-md-3,.domestic .col-md-8,.domestic .col-md-9{
+    padding-left:5px;
+    padding-right:5px;
+}
+.domestic .box img{
+    width:100%;
+    position: absolute;
+    top:0;
+    border-radius: 5px;
+}
+.domestic .title{
+    display: block;
+    padding:0 5px;
+    position: absolute;
+    bottom:53px;
+    font-size: 12px;
+    color:#fff;
+    font-weight: bold;
+}
+.domestic .price{
+    position: absolute;
+    bottom: 16px;
+    color:red;
+    font-size: 15px;
+}
+.domestic .row {
+    padding-bottom: 0px;
+}
+

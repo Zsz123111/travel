@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>线路详情</title>
+    <link rel="stylesheet" type="text/css" href="/frontdesk/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/frontdesk/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/frontdesk/css/route-detail.css">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/frontdesk/js/jquery-3.3.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/frontdesk/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!--引入头部-->
+    <header th:replace="~{/frontdesk/header::header}"></header>
+    <!-- 详情 start -->
+    <div class="wrap">
+        <p class="pros_title" th:text="${product.productName}">山西五台山2日1晚跟团游</p>
+        <div class="prosum_box">
+            <div class="prosum_left">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="4000">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img th:src="${product.pImage}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prosum_right">
+                <div class="info">
+                    <p class="price"><span th:text="${product.price}">¥2699.00</span>起</p>
+                    <p class="hotline">咨询电话:<span th:text="${product.hotline}">13812345678</span></p>
+                    <div class="opera">
+                        <a th:href="@{/frontdesk/favorite/add(pid=${product.pid})}" th:if="!${favorite}">
+                            <button class="btn btn-danger"><i style="vertical-align:middle;margin-right:5px"
+                                                              class="glyphicon glyphicon-heart-empty"></i>点击收藏</button>
+                        </a>
+                        <a th:href="@{/frontdesk/favorite/del(pid=${product.pid})}" th:if="${favorite}">
+                            <button class="btn already"><i style="vertical-align:middle;margin-right:5px"
+                                                           class="glyphicon glyphicon-heart-empty"></i>取消收藏</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="discount">
+                    <span>优惠活动：使用信用卡支付立减100</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="you_need_konw">
+            <span>线路详情</span>
+            <div class="notice" th:utext="${product.productDesc}"></div>
+        </div>
+
+        <div class="you_need_konw">
+            <span>旅游须知</span>
+            <div class="notice">
+                <p>1、旅行社已投保旅行社责任险。建议游客购买旅游意外保险 <br>
+
+                <p>2、旅游者参加打猎、潜水、海边游泳、漂流、滑水、滑雪、滑草、蹦极、跳伞、滑翔、乘热气球、骑马、赛车、攀岩、水疗、水上飞机等属于高风险性游乐项目的，敬请旅游者务必在参加前充分了解项目的安全须知并确保身体状况能适应此类活动；如旅游者不具备较好的身体条件及技能，可能会造成身体伤害。
+                </p>
+
+                <p>3、参加出海活动时，请务必穿着救生设备。参加水上活动应注意自己的身体状况，有心脏病、冠心病、高血压、感冒、发烧和饮酒及餐后不可以参加水上活动及潜水。在海里活动时，严禁触摸海洋中各种鱼类，水母，海胆，珊瑚等海洋生物，避免被其蛰伤。老人和小孩必须有成年人陪同才能参加合适的水上活动。在海边游玩时，注意保管好随身携带的贵重物品。
+                </p>
+
+                <p>4、根据中国海关总署的规定，旅客在境外购买的物品，在进入中国海关时可能需要征收关税。详细内容见《中华人民共和国海关总署公告2010年第54号文件》。</p>
+
+                <p>5、建议出发时行李托运，贵重物品、常用物品、常用药品、御寒衣物等请随身携带，尽量不要托运。行李延误属于不可抗力因素，我司将全力协助客人跟进后续工作，但我司对此不承担任何责任。</p>
+                <p>1、旅行社已投保旅行社责任险。建议游客购买旅游意外保险 <br>
+
+                <p>2、旅游者参加打猎、潜水、海边游泳、漂流、滑水、滑雪、滑草、蹦极、跳伞、滑翔、乘热气球、骑马、赛车、攀岩、水疗、水上飞机等属于高风险性游乐项目的，敬请旅游者务必在参加前充分了解项目的安全须知并确保身体状况能适应此类活动；如旅游者不具备较好的身体条件及技能，可能会造成身体伤害。
+                </p>
+
+                <p>3、参加出海活动时，请务必穿着救生设备。参加水上活动应注意自己的身体状况，有心脏病、冠心病、高血压、感冒、发烧和饮酒及餐后不可以参加水上活动及潜水。在海里活动时，严禁触摸海洋中各种鱼类，水母，海胆，珊瑚等海洋生物，避免被其蛰伤。老人和小孩必须有成年人陪同才能参加合适的水上活动。在海边游玩时，注意保管好随身携带的贵重物品。
+                </p>
+
+                <p>4、根据中国海关总署的规定，旅客在境外购买的物品，在进入中国海关时可能需要征收关税。详细内容见《中华人民共和国海关总署公告2010年第54号文件》。</p>
+
+                <p>5、建议出发时行李托运，贵重物品、常用物品、常用药品、御寒衣物等请随身携带，尽量不要托运。行李延误属于不可抗力因素，我司将全力协助客人跟进后续工作，但我司对此不承担任何责任。</p>
+            </div>
+        </div>
+    </div>
+    <!-- 详情 end -->
+
+    <!--引入头部-->
+    <footer th:replace="~{/frontdesk/footer::footer}"></footer>
+
+</body>
+
+</html>

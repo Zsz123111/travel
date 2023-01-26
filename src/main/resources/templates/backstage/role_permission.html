@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>分配权限</title>
+    <th:block th:replace="/backstage/common_resources::common_css"/>
+    <th:block th:replace="/backstage/common_resources::common_js"/>
+</head>
+<body class="hold-transition skin-purple sidebar-mini">
+<div class="wrapper">
+    <!-- 页面头部 -->
+    <header th:replace="~{/backstage/common_header::header}"></header>
+    <!-- 导航侧栏 -->
+    <aside th:replace="~{/backstage/common_aside::aside}"></aside>
+    <!-- 内容区域 -->
+    <div class="content-wrapper">
+        <!-- 内容头部 -->
+        <section class="content-header">
+            <h1>
+                角色管理 <small>分配权限</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a th:href="@{/backstage/index}"><i
+                        class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a th:href="@{/backstage/role/all}">角色管理</a></li>
+                <li class="active">分配权限</li>
+            </ol>
+        </section>
+        <!-- 正文区域 -->
+        <section class="content">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">列表</h3>
+                </div>
+                <div class="box-body">
+                    <!-- 数据表格 -->
+                    <div class="table-box">
+                        <form th:action="@{/backstage/role/updatePermission}">
+                            <!--数据列表-->
+                            <table id="dataList"
+                                   class="table table-bordered table-striped table-hover dataTable">
+                                <thead>
+                                <tr>
+                                    <th class="" style="padding-right: 0px"><input
+                                            id="selall" type="checkbox" class="icheckbox_square-blue">
+                                    </th>
+                                    <th>权限名</th>
+                                    <th>权限详情</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <input type="hidden" name="rid" th:value="${rid}">
+                                <tr th:each="permission : ${permissions}">
+                                    <td th:if="${permission.roleHas}">
+                                        <input name="ids" type="checkbox" th:value="${permission.pid}" class="icheckbox_square-blue" checked>
+                                    </td>
+                                    <td th:if="${!permission.roleHas}">
+                                        <input name="ids" type="checkbox" th:value="${permission.pid}" class="icheckbox_square-blue">
+                                    </td>
+                                    <td th:text="${permission.permissionName }"></td>
+                                    <td th:text="${permission.permissionDesc }"></td>
+                                </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                            <div class="box-tools text-center">
+                                <button type="submit" class="btn bg-maroon">保存</button>
+                                <button type="button" class="btn bg-default" onclick="history.back(-1);">返回
+                                </button>
+                            </div>
+                            <!--数据列表/-->
+                        </form>
+                    </div>
+                    <!-- 数据表格 /-->
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- 底部导航 -->
+    <footer th:replace="~{/backstage/common_footer::footer}"></footer>
+</div>
+
+</body>
+</html>

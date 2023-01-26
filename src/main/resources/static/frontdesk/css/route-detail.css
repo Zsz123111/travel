@@ -1,0 +1,208 @@
+/*商品详情页*/
+.search_input {
+    height: 40px;
+}
+
+.bread_box {
+    width: 1188px;
+    padding: 10px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.bread_box a {
+    color: #000;
+}
+.wrap{
+    width: 1188px;
+    margin: 20px auto;
+}
+.pros_title {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: bold;
+}
+.pros_desc {
+    font-size: 15px;
+   
+}
+.prosum_box {
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+}
+
+.prosum_box .prosum_left {
+    margin: 20px 50px 20px 0px;
+    width: 750px;
+}
+
+.prosum_box .carousel-indicators {
+    display: none;
+}
+
+.prosum_box .imgs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.prosum_box .imgs .img_box {
+    padding-top: 15px;
+    padding-right: 5px;
+    flex: 1;
+
+}
+
+.prosum_box .imgs .img_box:nth-child(4) {
+    padding-right: 0px;
+
+}
+
+.prosum_box .imgs .img_box img {
+    height: auto;
+    width: 100%;
+
+}
+
+.prosum_box .imgs .img_box.bordered img {
+    border: 4px solid var(--primary-color)
+}
+
+.prosum_box .prosum_left img {
+
+    width: 100%;
+    height: 100%;
+}
+
+.prosum_box .prosum_left .big_img {
+    width: 570px;
+    height: 340px;
+}
+
+.prosum_box .prosum_left .little_img img {
+    width: 110px;
+    height: 70px;
+    opacity: 0.6;
+}
+
+.prosum_box .prosum_left .little_img img:hover {
+    opacity: 1.0;
+}
+
+.prosum_box .prosum_left .cur_img img {
+    opacity: 1.0;
+}
+
+.prosum_box .prosum_left .up_img,
+.prosum_box .prosum_left .down_img {
+    width: 110px;
+    height: 20px;
+    background: #333;
+}
+
+.prosum_box .prosum_left .up_img {
+    background: url("../images/arrows.jpg") no-repeat;
+    background-position: 0px -20px;
+}
+
+.prosum_box .prosum_left .up_img_disable {
+    background-position: 0px 0px;
+}
+
+.prosum_box .prosum_left .down_img {
+    background: url("../images/arrows.jpg") no-repeat;
+    background-position: 0px -60px;
+}
+
+.prosum_box .prosum_left .down_img_disable {
+    background-position: 0px -40px;
+}
+
+.prosum_box .prosum_left dt {
+    float: left;
+    margin-right: 4px;
+}
+
+.prosum_box .prosum_left dd {
+    float: left;
+}
+
+.prosum_box .prosum_left dd a {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.prosum_box .prosum_right {
+    width: 400px;
+    margin: 20px 0px 20px 0px;
+    position: relative;
+}
+
+.prosum_right .info{
+    background: linear-gradient(10.43deg, #def1df08 0%, #2e92a238 100%);
+    border-radius: 5px;
+    padding: 15px;
+}
+.prosum_right .info p{
+    text-align: left;
+
+}
+.prosum_right .info .price{
+    font-size:22px;
+}
+
+.prosum_right .info .hotline{
+    font-size:18px;
+    margin-top: 40px
+}
+
+.prosum_right .info .price span{
+    color:red;
+    font-size:40px;
+}
+.prosum_right .info i{
+    color:var(--primary-color);
+    font-size: 22px;
+}
+.prosum_right .discount{
+    padding:20px 10px;
+    /* font-size: 15px; */
+}
+.prosum_right .opera{
+    width: 100%;
+    margin: 50px 0px 30px 0px
+}
+
+.already{
+    background: #ccc;
+}
+
+.prosum_right button{
+    margin-right: 15px;
+    color:#fff;
+}
+
+
+.you_need_konw {
+    width: 1188px;
+    margin: 60px auto;
+}
+
+.you_need_konw span {
+    font-size: 16px;
+    border-bottom: 3px solid var(--primary-color);
+    
+}
+
+.notice {
+    border: solid 1px #ddd;
+    padding: 35px 48px;
+}
+
+.notice p {
+    line-height: 24px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}

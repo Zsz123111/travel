@@ -1,0 +1,110 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<footer class="footer" th:fragment="footer">
+    <style>
+        .footer {
+            width: 100%;
+            background: #f5f5f5;
+
+        }
+
+        .why_select {
+            width: 1000px;
+            height: 190px;
+            margin: 0 auto;
+            padding: 10px 85px;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+
+        }
+
+
+        .why_select .icon {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background: url(../images/common_foot_2.png);
+            vertical-align: middle;
+            margin-right: 20px;
+            /* margin-left: 100px; */
+        }
+        .why_select .box{
+            flex:1;
+            padding-left: 30px;
+        }
+        .why_select .box ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            border-right: 1px solid #eee;
+        }
+
+        .why_select .box li {
+            width: 50%;
+            display: inline-block;
+            margin: 2px 0
+        }
+
+        .why_select .box:nth-child(2) .icon {
+            background-position: -40px 0px;
+
+        }
+
+        .why_select .box:nth-child(3) .icon {
+            background-position: -120px 0px;
+
+        }
+
+        .company {
+            width: 100%;
+            height: 38px;
+            line-height: 38px;
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+    <div class="why_select">
+        <div class="box">
+            <span class="icon"></span>旅游资讯
+            <ul>
+                <li>攻略索引</li>
+                <li>机票索引</li>
+                <li>火车票索引</li>
+                <li>攻略索引</li>
+                <li>旅游索引</li>
+                <li>邮轮索引</li>
+                <li>企业差旅索引</li>
+                <li>用车索引</li>
+            </ul>
+
+        </div>
+        <div class="box">
+            <span class="icon"></span>优惠
+            <ul>
+                <li>优惠机票</li>
+                <li>火车票优惠</li>
+                <li>酒店优惠</li>
+                <li>团购优惠</li>
+                <li>定制优惠</li>
+               
+            </ul>
+
+        </div>
+        <div class="box">
+            <span class="icon"></span>帮帮查
+            <ul>
+                <li>查询机票</li>
+                <li>查询火车票</li>
+                <li>查询酒店</li>
+                <li>查网红景点</li>
+                <li>查最佳路线</li>
+            </ul>
+        </div>
+    </div>
+    <div class="company">
+        <p>北京尚学堂百战程序员 版权所有@Copyright, All Rights Reserved </p>
+    </div>
+</footer>

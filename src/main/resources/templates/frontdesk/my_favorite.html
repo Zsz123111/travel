@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的收藏</title>
+    <link rel="stylesheet" type="text/css" href="/frontdesk/css/common.css">
+    <link rel="stylesheet" href="/frontdesk/css/faviorite.css">
+    <script src="/frontdesk/js/jquery-3.3.1.js"></script>
+    <script src="/frontdesk/js/bootstrap-paginator.js"></script>
+</head>
+<body>
+    <!--引入头部-->
+    <header th:replace="~{/frontdesk/header::header}"></header>
+    <div class="page_one">
+        <div class="contant">
+            <div class="left">
+                <ul>
+                    <li th:each="product:${productPage.records}">
+                        <img th:src="${product.pImage}" height="100">
+                        <div class="content">
+                            <p class="title" th:text="${product.productName}"></p>
+                            <div>
+                                <p class="price_num" >
+                                    <span>&yen;</span>
+                                    <span th:text="${product.price}">299</span>
+                                    <span>起</span>
+                                </p>
+                                <p class="details">
+                                    <a th:href="@{/frontdesk/product/routeDetail(pid=${product.pid})}">查看详情</a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pageNum">
+                    <ul class="pagination"></ul>
+                </div>
+                <script>
+                    $(function (){
+                        var currentPage = [[${productPage.current}]];//当前页
+                        var pages = [[${productPage.pages}]];// 总页数
+
+                        $(".pagination").bootstrapPaginator({
+                            bootstrapMajorVersion: 3, //bootstrap版本
+                            currentPage: currentPage, //当前页
+                            totalPages: pages, // 总页数
+                            numberOfPages: 10, // 最多显示多少页
+                            itemTexts: function (type, page, current) {
+                                switch (type) {
+                                    case "first":
+                                        return "首页";
+                                    case "prev":
+                                        return "<<";
+                                    case "next":
+                                        return ">>";
+                                    case "last":
+                                        return "末页";
+                                    case "page":
+                                        return page;
+                                }
+                            },
+                            onPageClicked: function (event, originalEvent, type, page) { //点击页码执行的方法
+                                location.href ="/frontdesk/favorite/myFavorite?page="+page;
+                            }
+                        });
+
+                    })
+                </script>
+            </div>
+         
+        </div>
+    </div>
+    </div>
+
+    <!--引入头部-->
+    <footer th:replace="~{/frontdesk/footer::footer}"></footer>
+
+</body>
+
+</html>

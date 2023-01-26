@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>旅游产品列表</title>
+    <link rel="stylesheet" type="text/css" href="/frontdesk/css/common.css">
+    <link rel="stylesheet" href="/frontdesk/css/search.css">
+    <script src="/frontdesk/js/jquery-3.3.1.js"></script>
+    <script src="/frontdesk/js/bootstrap-paginator.js"></script>
+</head>
+
+<body>
+<!--引入头部-->
+<header th:replace="~{/frontdesk/header::header}"></header>
+<div class="page_one">
+    <div class="contant">
+        <div class="left">
+            <ul>
+                <li th:each="product : ${productPage.records}">
+                    <img th:src="${product.pImage}" width="320">
+                    <div class="content">
+                        <p class="title" th:text="${product.productName}"></p>
+                        <div>
+                            <p class="price_num">
+                                <span>&yen;</span>
+                                <span th:text="${product.price}"></span>
+                                <span>起</span>
+                            </p>
+                            <p class="details">
+                                <a th:href="@{/frontdesk/product/routeDetail(pid=${product.pid})}">查看详情</a>
+                            </p>
+                        </div>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <div class="pageNum">
+                <ul class="pagination"></ul>
+            </div>
+            <script>
+                $(function (){
+                    var currentPage = [[${productPage.current}]];//当前页
+                    var pages = [[${productPage.pages}]];// 总页数
+                    var cid = '[[${cid}]]';// 总页数
+                    var productName = '[[${productName}]]';// 总页数
+
+                    $(".pagination").bootstrapPaginator({
+                        bootstrapMajorVersion: 3, //bootstrap版本
+                        currentPage: currentPage, //当前页
+                        totalPages: pages, // 总页数
+                        numberOfPages: 10, // 最多显示多少页
+                        itemTexts: function (type, page, current) {
+                            switch (type) {
+                                case "first":
+                                    return "首页";
+                                case "prev":
+                                    return "<<";
+                                case "next":
+                                    return ">>";
+                                case "last":
+                                    return "末页";
+                                case "page":
+                                    return page;
+                            }
+                        },
+                        onPageClicked: function (event, originalEvent, type, page) { //点击页码执行的方法
+                            location.href ="/frontdesk/product/routeList?cid=" + cid
+                                +"&productName="+productName
+                                +"&page="+page;
+                        }
+                    });
+
+                })
+            </script>
+        </div>
+        <div class="right">
+            <ul class="tops_list">
+                <li class="header">热门推荐</li>
+                <li class="item">
+                    <span class="badge">1</span>
+                    <img src="/frontdesk/images/top1.jpg" width="80px" height="80px"/>
+                    <div class="contents">
+                        <span>喀纳斯8日游</span>
+                        <p>
+                            <span class="price">￥6980</span>
+                            |
+                            <span class="score">5.0分</span>
+                        </p>
+                    </div>
+
+                </li>
+                <li class="item">
+                    <span class="badge" style="background:#FF8B26">2</span>
+                    <img src="/frontdesk/images/top2.jpg" width="70px" height="70px"/>
+                    <div class="content">
+                        <span>黄果树梵净山11日游</span><br/>
+                        <span class="price">￥3280</span>
+                        |
+                        <span class="score">5.0分</span>
+                    </div>
+                </li>
+                <li class="item">
+                    <span class="badge" style="background:#FFB63E">3</span>
+                    <img src="/frontdesk/images/top3.jpeg" width="80px" height="80px"/>
+                    <div class="content">
+                        <span>庐山3日游</span><br/>
+                        <span class="price">￥1817</span>
+                        |
+                        <span class="score">5.0分</span>
+                    </div>
+                </li>
+                <li class="item">
+                    <span class="badge" style="background:#99AECA ;">4</span>
+                    <img src="/frontdesk/images/top4.jpg" width="80px" height="80px"/>
+                    <div class="content">
+                        <span>张家界+黄龙洞+天门山+凤凰4日游</span><br/>
+                        <span class="price">￥2780</span>
+                        |
+                        <span class="score">5.0分</span>
+                    </div>
+                </li>
+                <li class="item">
+                    <span class="badge" style="background:#99AECA ;">5</span>
+                    <img src="/frontdesk/images/top5.jpg" width="80px" height="80px"/>
+                    <div class="content">
+                        <span>拉萨布宫-巴松错-羊湖卧飞9日游</span><br/>
+                        <span class="price">￥7780</span>
+                        |
+                        <span class="score">5.0分</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<!--引入头部-->
+<footer th:replace="~{/frontdesk/footer::footer}"></footer>
+</body>
+
+</html>

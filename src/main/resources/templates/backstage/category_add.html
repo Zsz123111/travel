@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>新增产品类型</title>
+    <th:block th:replace="/backstage/common_resources::common_css"/>
+    <th:block th:replace="/backstage/common_resources::common_js"/>
+</head>
+<body class="hold-transition skin-purple sidebar-mini">
+<div class="wrapper">
+    <!-- 页面头部 -->
+    <header th:replace="~{/backstage/common_header::header}"></header>
+    <!-- 导航侧栏 -->
+    <aside th:replace="~{/backstage/common_aside::aside}"></aside>
+    <!-- 内容区域 -->
+    <div class="content-wrapper">
+        <!-- 内容头部 -->
+        <section class="content-header">
+            <h1>
+                产品类型管理 <small>新增产品类型</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a th:href="@{/backstage/index}"><i
+                        class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a th:href="@{/backstage/category/all}">产品类型管理</a></li>
+                <li class="active">新增产品类型</li>
+            </ol>
+        </section>
+        <!-- 正文区域 -->
+        <section class="content">
+            <form th:action="@{/backstage/category/add}" method="post">
+                <div class="panel panel-default">
+                    <div class="panel-heading">产品类型信息</div>
+                    <div class="row data-type">
+                        <div class="col-md-2 title">产品类型名称</div>
+                        <div class="col-md-4 data">
+                            <input type="text" class="form-control" name="cname"
+                                   placeholder="产品类型名称" value="">
+                        </div>
+                    </div>
+                    <!--工具栏-->
+                    <div class="box-tools text-center">
+                        <button type="submit" class="btn bg-maroon">保存</button>
+                        <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+    <!-- 底部导航 -->
+    <footer th:replace="~{/backstage/common_footer::footer}"></footer>
+</div>
+
+</body>
+</html>

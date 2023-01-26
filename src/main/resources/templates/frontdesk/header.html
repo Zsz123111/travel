@@ -1,0 +1,240 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<header class="header" th:fragment="header">
+	<!-- 头部 start -->
+	<style>
+		.header {
+			width: 100%
+		}
+
+		.header_top {
+			width: 100%;
+			height: 0px;
+			/* background: url('../images/top (3).jpg') 100%; */
+			border-top: 30px solid transparent;
+			border-image-source: url(../images/top1.jpeg);
+			border-image-slice: 15 9 0 0;
+			border-image-repeat: stretch;
+		}
+
+		.header_top img {
+			width: 100%;
+			height: 100%
+		}
+
+		.shortcut {
+			height: 30px;
+			background: #f8f8f8;
+			border-bottom: 1px solid #eee;
+			font-size: 14px;
+		}
+
+		.shortcut .box {
+			width: 1200px;
+			margin: 0 auto;
+			height: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.shortcut .box a {
+			color: #404040;
+			margin: 0 8px
+		}
+
+		.shortcut .box .right .glyphicon {
+			color: #aaa;
+			font-size: 14px;
+		}
+
+		.city {
+			color: var(--primary-color);
+			padding-top: 5px;
+		}
+
+		.header_wrap {
+			padding: 10px 0;
+		}
+
+		.topbar {
+			width: 1200px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.logo {
+			display: flex;
+			align-items: center;
+		}
+
+		.logo img {
+			margin-right: 15px
+		}
+
+
+		.logo a {
+			display: inline-block;
+		}
+
+		.search {
+			display: flex;
+		}
+
+		.search_input {
+			float: left;
+			width: 400px;
+			height: 40px;
+			border: 2px solid var(--primary-color);
+			padding-left: 10px;
+		}
+
+		.search_input:focus {
+			outline: none;
+		}
+
+		.search-button {
+			float: left;
+			width: 90px;
+			height: 40px;
+			background: var(--primary-color);
+			text-align: center;
+			line-height: 40px;
+			color: #fff;
+			font-size: 18px;
+		}
+
+		.hot_pic,
+		.hot_tel {
+			float: left;
+		}
+
+		.hot_pic {
+			margin-right: 18px;
+		}
+
+		.hot_time {
+			color: #777575;
+			font-size: 14px;
+		}
+
+		.hot_num {
+			color: var(--primary-color);
+			font-size: 18px;
+		}
+
+		.navitem {
+			width: 100%;
+			height: 40px;
+			background: var(--primary-color);
+		}
+
+		.nav {
+			width: 1200px;
+			margin: 20px auto 0;
+		}
+
+		.nav li {
+			float: left;
+			margin-left: 30px;
+		}
+
+		.nav li a {
+			color: #fff;
+			font-size: 14px;
+			display: inline-block;
+		}
+
+		.nav>li>a:focus,
+		.nav>li>a:hover {
+			background: none;
+		}
+
+		.nav .nav-active {
+			background-color: #00000047;
+		}
+
+		.nav>li>a {
+			padding: 10px 15px;
+		}
+	</style>
+	<div class="shortcut">
+		<div class="box">
+			<div class="left">
+				<div th:if="${session.member}== null">
+					<!-- 如果未登陆则显示登录/注册 -->
+					<a href="/frontdesk/login">登录</a>
+					|
+					<a href="/frontdesk/register">注册</a>
+				</div>
+			</div>
+			<!-- 登录状态  -->
+			<div class="right">
+				<div th:if="${session.member}!=null">
+					<!-- 如果已经登陆则显示用户名 -->
+					 <span th:text="'欢迎回来，'+${session.member.username}"></span>
+					<a href="/frontdesk/favorite/myFavorite" class="collection">我的收藏</a>
+					<a href="/frontdesk/member/logout">
+						退出
+						<span class="glyphicon glyphicon-log-out"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="header_wrap">
+		<div class="topbar">
+			<div class="logo">
+				<img src="images/logo.png" alt="">
+
+				<div>
+					<div  style="width:100px">
+						<span class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+							北京
+							<!-- <span class="caret"></span> -->
+						</span>
+					</div>
+					<p class="city">
+						<span class="glyphicon glyphicon-map-marker"></span>
+						当前城市
+					</p>
+				</div>
+			</div>
+			<div class="search">
+				<form action="/frontdesk/product/routeList" method="post">
+					<input name="productName" th:value="${productName}" type="text" placeholder="" class="search_input" autocomplete="off">
+					<button type="submit" class="search-button">搜索</button>
+				</form>
+			</div>
+			<div class="hottel">
+				<div class="hot_pic">
+					<img src="images/hot_tel.jpg" alt="">
+				</div>
+				<div class="hot_tel">
+					<p class="hot_time">客服热线(9:00-6:00)</p>
+					<p class="hot_num">18514000360</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 首页导航 -->
+	<div class="navitem">
+		<ul class="nav"></ul>
+	</div>
+
+	<script>
+		$(function (){
+			$.get("/frontdesk/category/all",function (categorys) {
+				var str = "<li class=\"nav-active\"><a href=\"/frontdesk/index\">首页</a></li>";
+				for (var i=0 ;i<categorys.length;i++){
+					str += "<li><a href=\"/frontdesk/product/routeList?cid="+categorys[i].cid+"\">"+categorys[i].cname+"</a></li>";
+				}
+				$(".nav").html(str);
+			})
+		})
+	</script>
+
+</header>
+<!-- 头部 end -->

@@ -1,0 +1,244 @@
+a {
+  color: #000;
+}
+
+.page_one {
+  background-color: #eeeeee57;
+}
+
+.contant {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: flex;
+}
+
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+.contents{
+  width: 600px;
+}
+
+.page_one .left {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.page_one .right {
+  width: 300px;
+  height: 560px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+}
+
+.page_one .left ul {
+  display: inline-block;
+}
+
+.page_one .left>ul li {
+  width: 100%;
+  height: 170px;
+  border-left: 0;
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.page_one .left>ul li img {
+  width: 200px;
+  height: 140px;
+  border-radius: 5px;
+  margin-right: 30px;
+
+}
+
+.page_one .left>ul li .title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.page_one .left>ul li .content div {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page_one .left>ul li .content .score {
+  font-size: 18px;
+  color: var(--primary-color)
+}
+
+.page_one .left>ul li .content .price_num {
+  font-size: 18px;
+  color: red
+}
+.content {
+  float: left;
+  width: 600px;
+}
+
+.page_one .left>ul li .price .price_num span:nth-of-type(3) {
+  font-size: 16px;
+}
+
+.page_one .left .page_num_inf {
+  color: #878787;
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+.page_one .left .page_num_inf i {
+  float: left;
+  width: 4px;
+  background-color: #878787;
+  height: 20px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.page_one .left .page_num_inf span {
+  color: #ff4848;
+}
+
+.page_one>.right {
+  width: 244px;
+  height: 460px;
+  float: right;
+  background-color: #f7f7f7;
+  padding: 8px;
+  padding-top: 0;
+  font-size: 14px;
+}
+
+.page_one>.right .top {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 8px;
+}
+
+.page_one>.right .top .hot {
+  float: left;
+  color: #ff4848;
+  margin-right: 7px;
+  line-height: 38px;
+  border-bottom: 4px solid #ff4848;
+}
+
+.page_one>.right ul li {
+  width: 100%;
+  height: 72px;
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+  font-size: 12px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.page_one>.right ul li .left {
+  float: left;
+  width: 50%;
+}
+
+.page_one>.right ul li .left img {
+  width: 100%;
+}
+
+.page_one>.right ul li .right {
+  width: 50%;
+  float: right;
+  padding-left: 4px;
+  box-sizing: border-box;
+  padding-top: 7px;
+}
+
+.page_one>.right ul li .right p:nth-of-type(1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.page_one>.right ul li .right p>span {
+  font-size: 16px;
+  color: #ff4848;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+.tops_list {
+  border: 1px solid #e2f2fb;
+  border-radius: 10px;
+  margin-right: 20px;
+  padding-bottom: 40px;
+  background: #fff;
+}
+
+.tops_list .header {
+  height: 56px;
+  /* background: url(../images/group.png) no-repeat; */
+  background-size: auto 159%;
+  text-align: center;
+  font-size: 16px;
+  line-height: 56px;
+  font-weight: bold;
+  padding-right: 10px;
+  color: inherit;
+  background: #eeeeee5e;
+}
+
+.tops_list .item {
+  display: flex;
+  padding: 15px;
+  background-color: #fff;
+  padding-bottom: 0px;
+}
+
+.tops_list .item img {
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.tops_list .item .content {
+  flex: 1;
+  padding-top: 5px;
+}
+.score{
+  color:var(--primary-color)
+}
+
+
+.tops_list .item .price {
+  font-size: 16px;
+  color: #e20f0f;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.tops_list .item .badge {
+  height: 20px;
+  position: absolute;
+  background: #ff0000ba
+}
+
