@@ -2,6 +2,7 @@
 
 #### 介绍
 旅游网前后台项目，基于springboot,springMVC,mybatis-plus
+用了spring security权限校验
 
 #### 软件架构
 软件架构说明
