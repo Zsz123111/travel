@@ -35,8 +35,8 @@ logging:
 
 #发送邮件配置
 mail:
-  user: 910678508@qq.com
-  password: refpgsqjkmoqbfge
+  user: 自己项目的官方邮件
+  password: 自己配置
 
 #项目路径
 project:
