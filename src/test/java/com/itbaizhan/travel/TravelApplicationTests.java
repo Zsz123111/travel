@@ -34,7 +34,7 @@ class TravelApplicationTests {
 //        List<RoleWithStatus> roles = adminService.findRole(1);
 //        Page<Product> productPage = productMapper.findProductPage(new Page<>(1, 5));
 //        System.out.println(productPage);
-        mailUtils.sendMail("910678508@qq.com","这是一封测试邮件","测试");
+        mailUtils.sendMail("xxx@qq.com","这是一封测试邮件","测试");
     }
 
 }
