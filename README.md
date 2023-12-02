@@ -1,24 +1,42 @@
 # 旅游网购物商城项目
 
-#### 介绍
-旅游网前后台项目，基于springboot,springMVC,mybatis-plus
-用了spring security权限校验
+ :heart:  :heart: :heart:  :heart:  :heart:  :heart: 
 
+ **如果你觉得这个项目帮到了你，麻烦点点关注，star该项目，您的支持是我更新的动力！** 
+
+ **如果你觉得这个项目帮到了你，麻烦点点关注，star该项目，您的支持是我更新的动力！** 
+
+ **如果你觉得这个项目帮到了你，麻烦点点关注，star该项目，您的支持是我更新的动力！** 
+
+ :heart:  :heart: :heart:  :heart:  :heart:  :heart: 
+
+
+#### 介绍
+旅游网前后台项目，基于 **SpringBoot2.4.2,Spring MVC,Mybatis-Plus+Mybatis** 
+
+用了 **Spring Security** 权限校验
+
+数据库 **Mysql5.7** 
+
+前端使用 **Thymeleaf** 模板引擎改造 **html** 
+
+ 环境为**jdk11** 
 #### 软件架构
 软件架构说明
 
+单体架构，简单的javaweb练手项目
 
 #### 安装教程
 
 1.  有个sql文件自己导入一下
-2.  yml文件里面的邮件改成自己的，具体怎么使用验证工具可以自行百度一下不难
-3.  xxxx
+2.  application.yml文件里面的邮件改成自己的，具体怎么使用验证工具可以自行百度一下不难
+3.  application.yml文件改一下数据库配置
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  看一下application.yml自己设置的启动路径
+2.  一般是http://localhost:端口号/配置路径
+3.  前端源码在resources文件夹下
 
 #### 参与贡献
 
@@ -26,13 +44,3 @@
 2.  新建 Feat_xxx 分支
 3.  提交代码
 4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
